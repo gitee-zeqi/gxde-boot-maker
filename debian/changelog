@@ -1,8 +1,9 @@
-gxde-boot-maker (2.0.5.0) UNRELEASED; urgency=medium
+gxde-boot-maker (2.0.5.1) UNRELEASED; urgency=medium
 
   * 更换包名
+  * 兼容全局背景
 
- -- gfdgd_xi <3025613752@qq.com>  Sat, 05 Oct 2024 19:15:41 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Tue, 28 Jan 2025 11:45:57 +0800
 
 gxde-boot-maker (1.9.0-1) stable; urgency=low
 
