@@ -244,6 +244,8 @@ BMWindow::BMWindow(QWidget *parent)
 //    emit d->progressWidget->testCancel();
 //    emit d->progressWidget->finish(0, "aa", "ccc");
     d->interface->start();
+
+    setEnableWindowBackground(1);
 }
 
 BMWindow::~BMWindow()
