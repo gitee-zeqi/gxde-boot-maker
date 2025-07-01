@@ -158,7 +158,7 @@ bool BootMaker::install(const QString &image, const QString &unused_device, cons
         XSys::SynExec("umount", targetPartition);
 
         QStringList args;
-        args << "-n" << "DEEPINOS" << targetPartition;
+        args << "-n" << "GXDEOS" << targetPartition;
         XSys::SynExec("mkfs.fat", args.join(" "));
 
         XSys::DiskUtil::Mount(targetPartition);

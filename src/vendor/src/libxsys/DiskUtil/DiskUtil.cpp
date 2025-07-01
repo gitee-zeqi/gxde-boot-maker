@@ -168,7 +168,7 @@ void UnlockDisk(HANDLE handle)
 XSys::Result InstallSyslinux(const QString &targetDev)
 {
     // install syslinux
-    XSys::SynExec("label", QString(" %1:DEEPINOS").arg(targetDev[0]));
+    XSys::SynExec("label", QString(" %1:GXDEOS").arg(targetDev[0]));
     QString sysliuxPath = XSys::FS::InsertTmpFile(QString(":/blob/syslinux/win32/syslinux.exe"));
     return XSys::SynExec(sysliuxPath, QString(" -i -m -a %1:").arg(targetDev[0]));
 }
@@ -193,7 +193,7 @@ XSys::Result InstallBootloader(const QString &targetDev)
                   .arg(tmpfgcfgPath));
 
     QString driverLetter = QString("%1:").arg(targetDev[0]);
-    XSys::SynExec("label", QString("%1 DEEPINOS").arg(driverLetter));
+    XSys::SynExec("label", QString("%1 GXDEOS").arg(driverLetter));
 
     // install syslinux
     QString sysliuxPath = XSys::FS::InsertTmpFile(QString(":/blob/syslinux/win32/syslinux.exe"));
@@ -260,7 +260,7 @@ const QString MountPoint(const QString &targetDev)
     Filesystem    512-blocks     Used Available Capacity iused     ifree %iused
     Mounted on
     /dev/disk2s1     3920616  2683872   1236744    69%       0         0  100%
-    /Volumes/DEEPINOS 1
+    /Volumes/GXDEOS 1
     */
     XSys::Result ret = XSys::SynExec("df", "");
     if (!ret.isSuccess()) {
@@ -370,7 +370,7 @@ XSys::Result InstallSyslinux(const QString &targetDev)
 
     // rename label
     ret = XSys::SynExec(XSys::FS::SearchBin("fsck"), QString("-y %1").arg(targetDev));
-    ret = XSys::SynExec(XSys::FS::SearchBin("fatlabel"), QString(" %1 DEEPINOS").arg(targetDev));
+    ret = XSys::SynExec(XSys::FS::SearchBin("fatlabel"), QString(" %1 GXDEOS").arg(targetDev));
 
     FixMountPartition(targetDev);
 
@@ -413,7 +413,7 @@ XSys::Result InstallBootloader(const QString &diskDev)
 
     // rename label
     ret = XSys::SynExec(XSys::FS::SearchBin("fsck"), QString("-y %1").arg(newTargetDev));
-    ret = XSys::SynExec(XSys::FS::SearchBin("fatlabel"), QString(" %1 DEEPINOS").arg(newTargetDev));
+    ret = XSys::SynExec(XSys::FS::SearchBin("fatlabel"), QString(" %1 GXDEOS").arg(newTargetDev));
 
     // install syslinux
     XSys::Syslinux::InstallBootloader(newTargetDev);
@@ -537,8 +537,8 @@ QString Resource(const QString &name)
 
 XSys::Result InstallSyslinux(const QString &targetDev)
 {
-    // rename to DEEPINOS
-    XSys::SynExec("diskutil", QString("rename %1 DEEPINOS").arg(targetDev));
+    // rename to GXDEOS
+    XSys::SynExec("diskutil", QString("rename %1 GXDEOS").arg(targetDev));
 
     // install syslinux
     UmountDisk(targetDev);
@@ -582,9 +582,9 @@ XSys::Result InstallBootloader(const QString &diskDev)
     XSys::SynExec(xfbinstPath, QString(" %1 add-menu fb.cfg %2 ").arg(xfbinstDiskName).arg(tmpfgcfgPath));
 
 
-    // rename to DEEPINOS
+    // rename to GXDEOS
     XSys::SynExec("diskutil", QString("mountDisk %1").arg(diskDev));
-    XSys::SynExec("diskutil", QString("rename %1 DEEPINOS").arg(targetDev));
+    XSys::SynExec("diskutil", QString("rename %1 GXDEOS").arg(targetDev));
 
     // install syslinux
     SureUmount(targetDev);
