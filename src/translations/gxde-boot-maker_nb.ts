@@ -1,46 +1,47 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="nb" version="2.1">
+<?xml version='1.0' encoding='utf-8'?>
+<TS language="nb" version="2.1">
 <context>
     <name>BMHandler</name>
     <message>
-        <location filename="../libdbm/backend/bootmaker.cpp" line="64"/>
+        <location filename="../libdbm/backend/bootmaker.cpp" line="64" />
         <source>Failed to call the command %1.</source>
         <translation>Klarte ikke å kalle på kommandoen %1.</translation>
     </message>
     <message>
-        <location filename="../libdbm/backend/bootmaker.cpp" line="66"/>
+        <location filename="../libdbm/backend/bootmaker.cpp" line="66" />
         <source>Disk Format Error: Please format the disk with FAT32</source>
-        <translation type="unfinished"/>
+        <translation>Diskformatfeil: Vennligst formatter disk med FAT32</translation>
     </message>
     <message>
-        <location filename="../libdbm/backend/bootmaker.cpp" line="68"/>
+        <location filename="../libdbm/backend/bootmaker.cpp" line="68" />
         <source>Insufficient Disk Space: Please ensure that the disk has %1 free space</source>
-        <translation type="unfinished"/>
+        <translation>Utilstrekkelig diskplass: Vennligst sørg for at disken har %1 ledig plass</translation>
     </message>
     <message>
-        <location filename="../libdbm/backend/bootmaker.cpp" line="70"/>
+        <location filename="../libdbm/backend/bootmaker.cpp" line="70" />
         <source>Disk Mount Error: Please plug in the disk again or reboot the system to retry</source>
-        <translation type="unfinished"/>
+        <translation>Diskmonteringsfeil: Vennligst koble til disken igjen eller start systemet på nytt for å prøve igjen</translation>
     </message>
     <message>
-        <location filename="../libdbm/backend/bootmaker.cpp" line="72"/>
+        <location filename="../libdbm/backend/bootmaker.cpp" line="72" />
         <source>Image Uncompress Error: Please check the md5 checksum of the image and ensure the image is complete</source>
-        <translation type="unfinished"/>
+        <translation>Bildeavkomprimeringsfeil: Sjekk md5-sjekksummen for bildet og sørg for at bildet er komplett</translation>
     </message>
     <message>
-        <location filename="../libdbm/backend/bootmaker.cpp" line="74"/>
+        <location filename="../libdbm/backend/bootmaker.cpp" line="74" />
         <source>Internal Error</source>
-        <translation type="unfinished"/>
+        <translation>Intern feil</translation>
     </message>
 </context>
 <context>
     <name>BMWindow</name>
     <message>
-        <location filename="../app/bmwindow.cpp" line="117"/>
+        <location filename="../app/bmwindow.cpp" line="117" />
         <source>Deepin Boot Maker is a simple tool to write system image file into CD/DVD, USB drive and other installation medias.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Boot Maker er et enkelt verktøy for å skrive systembildefil til CD/DVD, USB-stasjon og andre installasjonsmedier.</translation>
     </message>
     <message>
-        <location filename="../app/bmwindow.cpp" line="119"/>
+        <location filename="../app/bmwindow.cpp" line="119" />
         <source>Deepin Boot Maker</source>
         <translation>Deepin Boot Maker</translation>
     </message>
@@ -48,55 +49,62 @@
 <context>
     <name>ISOSelectView</name>
     <message>
-        <location filename="../app/view/isoselectview.cpp" line="46"/>
+        <location filename="../app/view/isoselectview.cpp" line="46" />
         <source>Please select an ISO image file</source>
-        <translation type="unfinished"/>
+        <translation>Vennligst velg en ISO-fil</translation>
     </message>
     <message>
-        <location filename="../app/view/isoselectview.cpp" line="68"/>
+        <location filename="../app/view/isoselectview.cpp" line="68" />
         <source>Drag an ISO image file and drop it here</source>
-        <translation type="unfinished"/>
+        <translation>Dra et ISO-bildefil og slipp den her</translation>
     </message>
     <message>
-        <location filename="../app/view/isoselectview.cpp" line="72"/>
+        <location filename="../app/view/isoselectview.cpp" line="72" />
         <source>OR</source>
-        <translation type="unfinished"/>
+        <translation>Krav:
+
+1. Returner bare oversettelsesresultatet, uten noen forklaringer, kommentarer eller ekstra innhold
+2. Behold originalformateringen og tegnsettingen
+3. Sørg for at oversettelsen er nøyaktig, naturlig og idiomatisk på målspråket
+
+Originaltekst:
+OR</translation>
     </message>
     <message>
-        <location filename="../app/view/isoselectview.cpp" line="84"/>
+        <location filename="../app/view/isoselectview.cpp" line="84" />
         <source>Select an ISO image file</source>
-        <translation type="unfinished"/>
+        <translation>Velg en ISO-bildfil</translation>
     </message>
     <message>
-        <location filename="../app/view/isoselectview.cpp" line="102"/>
+        <location filename="../app/view/isoselectview.cpp" line="102" />
         <source>Next</source>
         <translation>Neste</translation>
     </message>
     <message>
-        <location filename="../app/view/isoselectview.cpp" line="162"/>
+        <location filename="../app/view/isoselectview.cpp" line="162" />
         <source>Reselect an ISO image file</source>
-        <translation type="unfinished"/>
+        <translation>Velg på nytt en ISO-bildfil</translation>
     </message>
 </context>
 <context>
     <name>ProgressView</name>
     <message>
-        <location filename="../app/view/progressview.cpp" line="44"/>
+        <location filename="../app/view/progressview.cpp" line="44" />
         <source>Making</source>
-        <translation type="unfinished"/>
+        <translation>Lagende</translation>
     </message>
     <message>
-        <location filename="../app/view/progressview.cpp" line="51"/>
+        <location filename="../app/view/progressview.cpp" line="51" />
         <source>Making the disk, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>Venter, disk lagres...</translation>
     </message>
     <message>
-        <location filename="../app/view/progressview.cpp" line="54"/>
+        <location filename="../app/view/progressview.cpp" line="54" />
         <source>Please do not remove the disk or shut down the computer when making</source>
-        <translation type="unfinished"/>
+        <translation>Vennligst fjern ikke disken eller slå av datamaskinen mens du lager</translation>
     </message>
     <message>
-        <location filename="../app/view/progressview.cpp" line="62"/>
+        <location filename="../app/view/progressview.cpp" line="62" />
         <source>Cancel</source>
         <translation>Avbryt</translation>
     </message>
@@ -104,17 +112,17 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../libdbm/util/deviceinfo.h" line="40"/>
+        <location filename="../libdbm/util/deviceinfo.h" line="40" />
         <source>Removable Disk</source>
-        <translation type="unfinished"/>
+        <translation>Fjernbar disk</translation>
     </message>
     <message>
-        <location filename="../libdbm/util/utils.cpp" line="118"/>
+        <location filename="../libdbm/util/utils.cpp" line="118" />
         <source>Removable disk</source>
         <translation>Flyttbar disk</translation>
     </message>
     <message>
-        <location filename="../app/main.cpp" line="116"/>
+        <location filename="../app/main.cpp" line="116" />
         <source>Deepin Boot Maker</source>
         <translation>Deepin Boot Maker</translation>
     </message>
@@ -122,90 +130,90 @@
 <context>
     <name>ResultView</name>
     <message>
-        <location filename="../app/view/resultview.cpp" line="86"/>
+        <location filename="../app/view/resultview.cpp" line="86" />
         <source>Reboot now</source>
-        <translation type="unfinished"/>
+        <translation>Start på nytt nå</translation>
     </message>
     <message>
-        <location filename="../app/view/resultview.cpp" line="52"/>
+        <location filename="../app/view/resultview.cpp" line="52" />
         <source>Make Successfully</source>
-        <translation type="unfinished"/>
+        <translation>Lykkes</translation>
     </message>
     <message>
-        <location filename="../app/view/resultview.cpp" line="79"/>
+        <location filename="../app/view/resultview.cpp" line="79" />
         <source>Done</source>
         <translation>Ferdig</translation>
     </message>
     <message>
-        <location filename="../app/view/resultview.cpp" line="122"/>
+        <location filename="../app/view/resultview.cpp" line="122" />
         <source>The error log will be uploaded automatically with feedback. We can not improve without your feedback and support</source>
-        <translation type="unfinished"/>
+        <translation>Feilmeldingsloggen vil bli lastet opp automatisk sammen med tilbakemeldingen. Vi kan ikke forbedre oss uten din tilbakemelding og støtte.</translation>
     </message>
     <message>
-        <location filename="../app/view/resultview.cpp" line="123"/>
+        <location filename="../app/view/resultview.cpp" line="123" />
         <source>Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Tilbakemelding</translation>
     </message>
     <message>
-        <location filename="../app/view/resultview.cpp" line="137"/>
+        <location filename="../app/view/resultview.cpp" line="137" />
         <source>Close</source>
         <translation>Lukk</translation>
     </message>
     <message>
-        <location filename="../app/view/resultview.cpp" line="145"/>
+        <location filename="../app/view/resultview.cpp" line="145" />
         <source>Sorry, making failed</source>
-        <translation type="unfinished"/>
+        <translation>Beklager, feilet</translation>
     </message>
     <message>
-        <location filename="../app/view/resultview.cpp" line="146"/>
+        <location filename="../app/view/resultview.cpp" line="146" />
         <source>Making failed</source>
-        <translation type="unfinished"/>
+        <translation>Mislykket</translation>
     </message>
 </context>
 <context>
     <name>UsbSelectView</name>
     <message>
-        <location filename="../app/view/usbselectview.cpp" line="79"/>
+        <location filename="../app/view/usbselectview.cpp" line="79" />
         <source>Please select a disk</source>
-        <translation type="unfinished"/>
+        <translation>Vennligst velg en disk</translation>
     </message>
     <message>
-        <location filename="../app/view/usbselectview.cpp" line="102"/>
+        <location filename="../app/view/usbselectview.cpp" line="102" />
         <source>Formatting disk can increase the making success rate</source>
-        <translation type="unfinished"/>
+        <translation>Formatering av disk kan øke suksessraten for produksjon</translation>
     </message>
     <message>
-        <location filename="../app/view/usbselectview.cpp" line="124"/>
+        <location filename="../app/view/usbselectview.cpp" line="124" />
         <source>No available disk found</source>
-        <translation type="unfinished"/>
+        <translation>Ingen tilgjengelig disk funnet</translation>
     </message>
     <message>
-        <location filename="../app/view/usbselectview.cpp" line="136"/>
+        <location filename="../app/view/usbselectview.cpp" line="136" />
         <source>Start making</source>
-        <translation type="unfinished"/>
+        <translation>Begynn å lage</translation>
     </message>
     <message>
-        <location filename="../app/view/usbselectview.cpp" line="153"/>
+        <location filename="../app/view/usbselectview.cpp" line="153" />
         <source>The disk data will be completely deleted by formatting, please confirm and continue</source>
-        <translation type="unfinished"/>
+        <translation>Skivdata vil bli fullstendig slettet ved formatering, vennligst bekreft og fortsett</translation>
     </message>
     <message>
-        <location filename="../app/view/usbselectview.cpp" line="231"/>
+        <location filename="../app/view/usbselectview.cpp" line="231" />
         <source>Format USB flash drive</source>
         <translation>Formater USB flash-enheten</translation>
     </message>
     <message>
-        <location filename="../app/view/usbselectview.cpp" line="233"/>
+        <location filename="../app/view/usbselectview.cpp" line="233" />
         <source>All data will be lost during formatting, please back up in advance and then press OK button.</source>
         <translation>Alle data vil gå tapt under formateringen, vennligst sikkerhetskopiere på forhånd, og trykk deretter på OK-knappen.</translation>
     </message>
     <message>
-        <location filename="../app/view/usbselectview.cpp" line="234"/>
+        <location filename="../app/view/usbselectview.cpp" line="234" />
         <source>Cancel</source>
         <translation>Avbryt</translation>
     </message>
     <message>
-        <location filename="../app/view/usbselectview.cpp" line="235"/>
+        <location filename="../app/view/usbselectview.cpp" line="235" />
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
