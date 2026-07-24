@@ -1,0 +1,83 @@
+# .github/workflows/build-deb.yml
+name: Build Debian Package (with custom dependency)
+
+on:
+  push:
+    tags:
+      - '*'  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: debian:trixie-slim   # 使用官方 Debian 12 最小镜像
+      # 如需其他版本，可改为 debian:bullseye-slim 等
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 若需要从 git tag 生成版本号，保留完整历史
+
+      # 安装构建依赖和自定义 deb 包
+      - name: Install dependencies and custom .deb
+        run: |
+          apt-get update
+          # 安装 Debian 打包工具链
+          apt-get install -y \
+            build-essential \
+            devscripts \
+            debhelper \
+            fakeroot \
+            dpkg-dev \
+            lintian
+
+          # 查找根目录下的第一个 .deb 文件（假设你只放了一个）
+          DEB_FILE=$(ls /*.deb 2>/dev/null | head -n 1)
+          if [ -z "$DEB_FILE" ]; then
+            echo "❌ No .deb file found in the project root!"
+            exit 1
+          fi
+          echo "📦 Installing $DEB_FILE ..."
+          # 使用 apt 安装，自动处理依赖（等价于 dpkg -i + apt-get install -f）
+          apt install -y "$DEB_FILE"
+
+      # 编译生成项目的 Debian 包（假设项目已 Debian 化）
+      - name: Build the project Debian package
+        run: |
+          # 若需要从 git tag 自动生成版本号，可在此添加逻辑
+          dpkg-buildpackage -us -uc -b -j$(nproc)
+
+      # 收集所有生成的 .deb、.ddeb、.changes 等
+      - name: Collect artifacts
+        run: |
+          mkdir -p artifacts
+          cp ../*.deb ../*.ddeb ../*.changes ../*.buildinfo artifacts/ 2>/dev/null || true
+
+      # 上传为 workflow artifact，便于下载测试
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: deb-packages
+          path: artifacts/
+          retention-days: 7
+
+      # 可选：运行 lintian 检查
+      - name: Run lintian
+        run: |
+          if ls artifacts/*.changes 1> /dev/null 2>&1; then
+            lintian --info --display-info --pedantic artifacts/*.changes
+          else
+            echo "⚠️ No .changes file, skipping lintian"
+          fi
+
+      # 可选：如果是 release 事件，将 .deb 上传到 GitHub Release
+      - name: Upload to release (using gh CLI)
+        if: github.event_name == 'release'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          apt-get install -y gh   # 容器内安装 gh 命令行
+          for deb in artifacts/*.deb; do
+            gh release upload ${{ github.event.release.tag_name }} "$deb" --clobber
+          done
