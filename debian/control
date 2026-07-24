@@ -4,10 +4,10 @@ Priority: extra
 Maintainer: Deepin Sysdev <sysdev@linuxdeepin.com>
 Build-Depends: debhelper (>= 9),
  python3,
- qt5-qmake,
- qttools5-dev-tools,
- qtbase5-private-dev,
- qtbase5-dev,
+ qmake6,
+ qt6-tools-dev-tools,
+ qt6-base-private-dev,
+ qt6-base-dev,
  libxcb-util0-dev,
  libmtdev-dev,
  libxrender-dev,
@@ -15,7 +15,7 @@ Build-Depends: debhelper (>= 9),
  libfontconfig-dev,
  libegl1-mesa-dev,
  libstartup-notification0-dev,
- libdtkwidget2-dev
+ libdtk2widget6-dev
 Standards-Version: 3.9.5
 Homepage: http://gitee.com/GXDE-OS/gxde-boot-maker
 
