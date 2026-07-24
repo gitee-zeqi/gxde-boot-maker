@@ -31,20 +31,13 @@ jobs:
             fakeroot \
             dpkg-dev \
             lintian
-
-          # 查找根目录下的第一个 .deb 文件（假设你只放了一个）
-          DEB_FILE=$(ls /*.deb 2>/dev/null | head -n 1)
-          if [ -z "$DEB_FILE" ]; then
-            echo "❌ No .deb file found in the project root!"
-            exit 1
-          fi
-          echo "📦 Installing $DEB_FILE ..."
-          # 使用 apt 安装，自动处理依赖（等价于 dpkg -i + apt-get install -f）
-          apt install -y "$DEB_FILE"
+            
+          apt install ./gxde-testing-source_1.1.6_all.deb
 
       # 编译生成项目的 Debian 包（假设项目已 Debian 化）
       - name: Build the project Debian package
         run: |
+          sudo apt install python3 qmake6 qt6-tools-dev-tools qt6-base-private-dev qt6-base-dev libxcb-util0-dev libmtdev-dev libxrender-dev libglib2.0-dev libfontconfig-dev libegl1-mesa-dev libstartup-notification0-dev libdtk6core-dev libdtk2widget6-dev
           # 若需要从 git tag 自动生成版本号，可在此添加逻辑
           dpkg-buildpackage -us -uc -b -j$(nproc)
 
