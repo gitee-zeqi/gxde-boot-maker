@@ -6,7 +6,7 @@ TARGET = gxde-boot-maker
 
 QT += core gui widgets concurrent network svg
 
-CONFIG += c++11
+CONFIG += c++17
 
 RESOURCES +=  \
     ../translate.qrc \
