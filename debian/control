@@ -15,7 +15,8 @@ Build-Depends: debhelper (>= 9),
  libfontconfig-dev,
  libegl1-mesa-dev,
  libstartup-notification0-dev,
- libdtk2widget6-dev
+ libdtk2widget6-dev,
+ libdtk6core-dev
 Standards-Version: 3.9.5
 Homepage: http://gitee.com/GXDE-OS/gxde-boot-maker
 
